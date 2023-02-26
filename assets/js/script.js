@@ -45,7 +45,7 @@ $(function () {
 });
 
 mainContentEl.on('click','.saveBtn', function() {
-  parentID = $(this).parent().attr('id');
+  var parentID = $(this).parent().attr('id');
   var newEvent = $(this).prev().val();
   localStorage.setItem(parentID, newEvent);
 });
