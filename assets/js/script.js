@@ -27,17 +27,15 @@ $(function () {
     if(i<12) meridiem = "AM"; // change value if hour is before 12
 
     // Declare DOM elements
-    var hourMainDivEl = $('<div id="'+ blockId +'" class="row time-block">');
-    var timeColEl = $('<div class="col-2 col-md-1 hour text-center py-3">'+ changeTime(i) + meridiem + '</div>');
+    var hourBlockEl = $('<div id="'+ blockId +'" class="row time-block">');
+    var hourEl = $('<div class="col-2 col-md-1 hour text-center py-3">'+ changeTime(i) + meridiem + '</div>');
     var textEl = $('<textarea class="col-8 col-md-10 description" rows="3">');
     var btnEl = $('<button class="btn saveBtn col-2 col-md-1" aria-label="save">');
     textEl.addClass(styleAt);
 
     // Append elemnts to be displayed on the page
-    mainContentEl.append(hourMainDivEl);
-    hourMainDivEl.append(timeColEl);
-    hourMainDivEl.append(textEl);
-    hourMainDivEl.append(btnEl);
+    mainContentEl.append(hourBlockEl);
+    hourBlockEl.append(hourEl).append(textEl).append(btnEl);
     btnEl.append('<i class="fas fa-save" aria-hidden="true">');
 
     // Check if there are any events saved in localStorage, if yes - print them
